@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\SupportController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/supports', [SupportController::class, 'index'])->name('supports.index');
+
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/contato', function () {
+    return view('site.contact');
 });
